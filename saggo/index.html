@@ -35,8 +35,9 @@
 <iframe id="app" title="Hojas de Vida SAGGO" allow="camera; microphone; geolocation; clipboard-read; clipboard-write; screen-wake-lock; fullscreen; web-share; autoplay"></iframe>
 <div id="bar" role="dialog" aria-live="polite"><span id="barText"></span><button id="barInstall" type="button">Instalar</button><button id="barClose" type="button">Ahora no</button></div>
 <script>
-// Enlace de la app de esta empresa (la implementación de Apps Script). Es lo único que cambia entre empresas, junto con el nombre del manifiesto.
-const APP_URL = 'https://script.google.com/macros/s/AKfycbxM7-blO3ZBzpJ_TAYnbBfkLPMaOqSWuwyvDRjiI-AHFPAgw2DWOjRQ8wwuLsgBcyR0lQ/exec';
+// Enlace de la app con el código de esta empresa (?empresa=…): entra directo al usuario y contraseña de la empresa.
+// Es lo único que cambia entre empresas, junto con el nombre del manifiesto.
+const APP_URL = 'https://script.google.com/macros/s/AKfycbxM7-blO3ZBzpJ_TAYnbBfkLPMaOqSWuwyvDRjiI-AHFPAgw2DWOjRQ8wwuLsgBcyR0lQ/exec?empresa=saggo';
 (function () {
   const frame = document.getElementById('app'), splash = document.getElementById('splash'), msg = document.getElementById('msg'), spin = document.getElementById('spin');
   let standalone = false;
@@ -50,6 +51,14 @@ const APP_URL = 'https://script.google.com/macros/s/AKfycbxM7-blO3ZBzpJ_TAYnbBfk
   }
   frame.addEventListener('load', function () { if (!frame.getAttribute('src')) return; splash.style.opacity = '0'; setTimeout(function () { splash.style.display = 'none'; }, 300); });
   addEventListener('online', function () { if (splash.style.display !== 'none') load(); });
+  // «Actualizar ahora» del aviso de actualización: la app avisa con {hv: 'reload'} y aquí se recarga todo (solo si viene de la app de este marco).
+  addEventListener('message', function (ev) {
+    if (!ev.data || ev.data.hv !== 'reload') return;
+    let w = ev.source, mine = false;
+    try { for (let i = 0; w && i < 6; i++) { if (w === frame.contentWindow) { mine = true; break; } if (w === w.parent) break; w = w.parent; } } catch (e) {}
+    if (!mine) return;
+    show('Actualizando…', true); location.reload();
+  });
   load();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
   // Botón «Instalar» (Android/computador) o indicación para iPhone
