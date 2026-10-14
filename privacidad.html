@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · Hojas de Vida</title>
+<meta name="description" content="Política de privacidad de la app Hojas de Vida (inventario y hojas de vida de activos) de CORPOVEDA SOFTWARE SOLUTIONS.">
+<style>
+:root{--bg:#eef3f7;--card:#fff;--ink:#173b65;--text:#22313f;--muted:#5b6b7b;--line:#d7e2ec;--accent:#1c7c99}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1720;--card:#16212c;--ink:#cfe3f5;--text:#dde6ee;--muted:#9fb0c0;--line:#2a3a4a;--accent:#5bb8d4}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:820px;margin:0 auto;padding:28px 16px 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px}
+h1{color:var(--ink);font-size:1.6rem;line-height:1.25;margin:0 0 4px}
+h2{color:var(--ink);font-size:1.12rem;margin:26px 0 6px}
+p,li{margin:6px 0}
+ul{padding-left:20px}
+.muted{color:var(--muted);font-size:.92rem}
+a{color:var(--accent)}
+code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.88em;word-break:break-all}
+footer{margin-top:18px;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<div class="card">
+<h1>Política de privacidad de la app Hojas de Vida</h1>
+<p class="muted">Vigente desde el 13 de octubre de 2026 · <a href="./">Inicio</a></p>
+
+<h2>1. Quién es el responsable</h2>
+<p>La app <b>Hojas de Vida</b> (inventario y hojas de vida de activos para empresas) es un servicio de <b>CORPOVEDA SOFTWARE SOLUTIONS</b>, Colombia. Contacto para cualquier tema de privacidad: <a href="mailto:corpovedasoftwaresolutions@gmail.com">corpovedasoftwaresolutions@gmail.com</a>.</p>
+<p>Cada empresa cliente es la responsable de los datos que registra en la app (sus activos, empleados y usuarios). CORPOVEDA SOFTWARE SOLUTIONS actúa como encargado: trata esos datos solo para prestar el servicio a esa empresa.</p>
+
+<h2>2. Qué datos maneja la app</h2>
+<ul>
+<li><b>Datos de los activos</b>: equipos, seriales, IMEI, líneas, licencias, fotos, actas, políticas y documentos que la empresa registra.</li>
+<li><b>Datos de los responsables</b>: nombre, cargo, área, correo y otros datos de los empleados a quienes la empresa asigna activos.</li>
+<li><b>Usuarios de la app</b>: usuario, nombre, perfil y contraseña (guardada cifrada, nunca en texto).</li>
+<li><b>Datos técnicos</b>: versión de la app, estado de la licencia y mensajes de error técnicos (sin datos de la empresa), para dar soporte.</li>
+</ul>
+
+<h2>3. Dónde se guardan</h2>
+<p>Los datos de cada empresa se guardan en <b>su propia hoja de cálculo de Google y en su propio Google Drive</b>, y ocupan el espacio de su cuenta. La app funciona en un servidor de Google Apps Script de CORPOVEDA SOFTWARE SOLUTIONS, que tiene permiso de edición sobre la hoja de la app y sobre la carpeta «Hojas de Vida - (empresa) (archivos de la app)» de cada empresa, solo para hacer funcionar la app y dar soporte.</p>
+
+<h2>4. Permisos de Google que pide la app</h2>
+<p>Cuando el administrador de una empresa pulsa «Conectar Google Drive», Google le pide autorizar:</p>
+<ul>
+<li><code>https://www.googleapis.com/auth/drive.file</code>: ver, crear y modificar <b>solo los archivos de Google Drive que la propia app crea</b>. La app no puede ver los demás archivos del Drive.</li>
+<li><code>openid</code> y <code>email</code>: conocer el correo de la cuenta de Google conectada, para mostrar qué cuenta quedó conectada.</li>
+</ul>
+<p>Con ese permiso la app crea la carpeta de la app y guarda allí las fotos, los PDF y los documentos que generan los usuarios de la empresa. El permiso se guarda en las propiedades privadas del servidor de la app (no visibles para los usuarios) y solo se usa para esas tareas.</p>
+<p>El uso que hace la app de la información recibida de las APIs de Google cumple la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos del Usuario de los Servicios de API de Google</a>, incluidos los requisitos de Uso Limitado. En particular, los datos de Google:</p>
+<ul>
+<li>no se venden ni se entregan a terceros;</li>
+<li>no se usan para publicidad;</li>
+<li>no se usan para entrenar modelos de inteligencia artificial;</li>
+<li>no son leídos por personas, salvo con autorización de la empresa para dar soporte, por seguridad o cuando la ley lo exija.</li>
+</ul>
+
+<h2>5. Para qué se usan los datos</h2>
+<ul>
+<li>Llevar el inventario y la hoja de vida de cada activo, sus asignaciones, entregas y devoluciones.</li>
+<li>Enviar los avisos por correo que la empresa configura (entregas, vencimientos, alertas).</li>
+<li>Controlar la licencia de la empresa, instalar actualizaciones y dar soporte técnico.</li>
+</ul>
+
+<h2>6. Seguridad</h2>
+<p>Las contraseñas se guardan cifradas; las sesiones vencen solas y se cierran al cambiar permisos o contraseña; los ingresos se bloquean tras varios intentos fallidos; toda la comunicación usa HTTPS. Cada empresa solo ve sus propios datos.</p>
+
+<h2>7. Cuánto tiempo y cómo retirar el permiso</h2>
+<p>Los datos permanecen en la cuenta de Google de la empresa mientras ella quiera. La empresa puede retirar en cualquier momento el permiso de Google Drive desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> y quitar el acceso de edición compartido a su hoja y su carpeta. Si termina el servicio, a solicitud de la empresa se borran del servidor de la app su permiso guardado y su registro; sus datos siguen en su cuenta.</p>
+
+<h2>8. Derechos de las personas</h2>
+<p>De acuerdo con la Ley 1581 de 2012 de Colombia, los titulares pueden conocer, actualizar, rectificar y pedir la supresión de sus datos. Como los datos son de cada empresa, la solicitud se tramita con la empresa; también puede escribir a <a href="mailto:corpovedasoftwaresolutions@gmail.com">corpovedasoftwaresolutions@gmail.com</a> y la remitiremos a la empresa que corresponda.</p>
+
+<h2>9. Cambios</h2>
+<p>Si esta política cambia, se publicará aquí con la nueva fecha de vigencia.</p>
+</div>
+<footer class="muted">© 2026 CORPOVEDA SOFTWARE SOLUTIONS · <a href="./">Hojas de Vida</a></footer>
+</main>
+</body>
+</html>
